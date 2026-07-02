@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AI-powered conversational agent that recommends SHL Individual Test Solutions based on hiring needs.">
+    <title>SHL Assessment Recommender</title>
+    <!-- Google Fonts: Inter and Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="SHL assessment chat">
+        <header class="topbar">
+          <div class="topbar-brand">
+            <p class="eyebrow">Conversational Assistant</p>
+            <h1>SHL Assessment Recommender</h1>
+          </div>
+          <div class="status-pill" id="statusPill">
+            <span class="status-dot"></span>
+            <span>Ready</span>
+          </div>
+        </header>
+
+        <div class="chat-layout">
+          <section class="chat-panel" aria-label="Conversation">
+            <div class="message-list" id="messageList" aria-live="polite"></div>
+
+            <div class="suggestions" aria-label="Example prompts">
+              <button type="button" data-prompt="I am hiring a Java developer">Java Developer</button>
+              <button type="button" data-prompt="I need assessments for a senior Java developer with AWS experience">Senior Java + AWS</button>
+              <button type="button" data-prompt="Actually add personality tests too">Add Personality</button>
+              <button type="button" data-prompt="What is the difference between OPQ and GSA?">Compare OPQ vs GSA</button>
+            </div>
+
+            <form class="composer" id="chatForm">
+              <textarea
+                id="messageInput"
+                rows="1"
+                maxlength="900"
+                placeholder="Describe the role or ask to refine the shortlist..."
+                aria-label="Message"
+              ></textarea>
+              <div class="composer-actions">
+                <button class="icon-button secondary" type="button" id="resetButton" title="Reset conversation" aria-label="Reset conversation">
+                  <span aria-hidden="true">↺</span>
+                </button>
+                <button class="send-button" type="submit" id="sendButton">
+                  Send
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="recommendations-panel" aria-label="Recommended assessments">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Catalog Matches</p>
+                <h2>Recommendations</h2>
+              </div>
+              <span class="count-badge" id="recCount">0</span>
+            </div>
+            <div class="recommendation-list" id="recommendationList">
+              <div class="empty-state">
+                <p>No shortlist yet.</p>
+                <span>Describe your hiring needs to see recommended assessments.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

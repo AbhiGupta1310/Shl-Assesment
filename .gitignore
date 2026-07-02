@@ -1,0 +1,17 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+app/data/catalog_raw.json
+*.log
+.DS_Store
