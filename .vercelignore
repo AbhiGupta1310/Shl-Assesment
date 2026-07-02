@@ -1,0 +1,25 @@
+# Vercel Ignore File
+
+# Exclude package manager configurations to force fallback to clean requirements.txt
+pyproject.toml
+uv.lock
+
+# Exclude local virtual environments and caches
+.venv/
+venv/
+env/
+.pytest_cache/
+.git/
+.DS_Store
+*.log
+*.pyc
+
+# Exclude development, test, and ingestion modules (cuts down bundle size)
+tests/
+eval/
+scripts/
+docs/
+Dockerfile
+render.yaml
+APPROACH.md
+shl_products.csv
